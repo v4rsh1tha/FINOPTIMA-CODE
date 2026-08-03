@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: #0A0A0A;
+    color: #FFFFFF;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #111111;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #333333;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #10B981;
+  }
+
+  input[type='range'] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  input[type='range']::-webkit-slider-track {
+    height: 6px;
+    border-radius: 3px;
+    background: #1E1E1E;
+  }
+
+  input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #10B981;
+    margin-top: -6px;
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+  }
+
+  input[type='range']::-moz-range-track {
+    height: 6px;
+    border-radius: 3px;
+    background: #1E1E1E;
+  }
+
+  input[type='range']::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #10B981;
+    border: none;
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/[0.03] backdrop-blur-md border border-white/[0.06] rounded-2xl;
+  }
+
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300 hover:bg-white/[0.06] hover:border-fin-emerald/20 hover:shadow-lg hover:shadow-fin-emerald/5;
+  }
+
+  .glow-emerald {
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.15), 0 0 60px rgba(16, 185, 129, 0.05);
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-fin-emerald to-fin-teal bg-clip-text text-transparent;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-fin-emerald to-fin-emerald-dark text-white font-semibold rounded-xl
+    transition-all duration-300 hover:shadow-lg hover:shadow-fin-emerald/25 hover:scale-[1.02] active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-white/[0.05] border border-white/10 text-white font-medium rounded-xl
+    transition-all duration-300 hover:bg-white/[0.1] hover:border-fin-emerald/30;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 bg-white/[0.05] border border-white/10 rounded-xl text-white
+    placeholder:text-gray-500 focus:outline-none focus:border-fin-emerald/50 focus:ring-1 focus:ring-fin-emerald/30
+    transition-all duration-200;
+  }
+}
